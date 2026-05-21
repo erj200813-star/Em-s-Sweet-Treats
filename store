@@ -1,0 +1,219 @@
+export default function SweetTreatsWebsite() {
+  const treats = [
+    {
+      name: 'Cupcakes',
+      image: 'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?q=80&w=1200&auto=format&fit=crop',
+      description: 'Custom cupcakes available in vanilla, chocolate, strawberry, red velvet, lemon, and cookies & cream flavors.'
+    },
+    {
+      name: 'Custom Cakes',
+      image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1200&auto=format&fit=crop',
+      description: 'Fully customizable cakes designed for birthdays, weddings, showers, graduations, and special events.'
+    },
+    {
+      name: 'Cake Pops',
+      image: 'https://images.unsplash.com/photo-1519869325930-281384150729?q=80&w=1200&auto=format&fit=crop',
+      description: 'Chocolate-covered cake pops with custom colors, sprinkles, and themed decorations.'
+    },
+    {
+      name: 'Cakesicles',
+      image: 'https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=1200&auto=format&fit=crop',
+      description: 'Elegant cakesicles dipped in premium chocolate and customized for any event theme.'
+    },
+    {
+      name: 'Rice Crispy Treats',
+      image: 'https://images.unsplash.com/photo-1586985564150-0d2f0f6f69fd?q=80&w=1200&auto=format&fit=crop',
+      description: 'Decorated rice crispy treats with custom drizzle colors, toppings, and packaging options.'
+    },
+    {
+      name: 'Chocolate Pretzels',
+      image: 'https://images.unsplash.com/photo-1514517220031-1f9c5d8d5f5d?q=80&w=1200&auto=format&fit=crop',
+      description: 'Crunchy pretzels dipped in milk, white, or dark chocolate with elegant finishing touches.'
+    },
+    {
+      name: 'Chocolate Covered Strawberries',
+      image: 'https://images.unsplash.com/photo-1518635017498-87f514b751ba?q=80&w=1200&auto=format&fit=crop',
+      description: 'Fresh strawberries dipped in premium chocolate and customized with drizzles or themed designs.'
+    }
+  ]
+
+  const fillings = [
+    'Vanilla Buttercream',
+    'Chocolate Ganache',
+    'Strawberry Filling',
+    'Cookies & Cream',
+    'Lemon Cream',
+    'Cream Cheese Frosting',
+    'Caramel',
+    'Raspberry Filling'
+  ]
+
+  return (
+    <div className="min-h-screen bg-slate-50 text-gray-800">
+      <header className="bg-gradient-to-r from-blue-900 via-blue-700 to-sky-500 py-24 px-6 text-center text-white shadow-xl">
+        <div className="max-w-5xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-5 tracking-tight">
+            Em’s Sweet Treats
+          </h1>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed text-blue-100">
+            Professional custom desserts made for birthdays, celebrations, weddings, parties, and special events.
+          </p>
+
+          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="#order"
+              className="bg-white text-blue-700 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:scale-105 transition-transform duration-300"
+            >
+              Place an Order
+            </a>
+
+            <a
+              href="#menu"
+              className="border border-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-700 transition-all duration-300"
+            >
+              View Menu
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <section id="menu" className="py-20 px-6 max-w-7xl mx-auto">
+        <div className="text-center mb-14">
+          <h2 className="text-5xl font-bold text-blue-800 mb-4">Dessert Menu</h2>
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            Every order is customizable to match your colors, themes, events, and flavor preferences.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {treats.map((treat, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-3xl overflow-hidden shadow-lg border border-blue-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+            >
+              <img
+                src={treat.image}
+                alt={treat.name}
+                className="w-full h-64 object-cover"
+              />
+
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-blue-800 mb-3">
+                  {treat.name}
+                </h3>
+
+                <p className="text-gray-600 leading-relaxed">
+                  {treat.description}
+                </p>
+
+                <button className="mt-6 bg-blue-700 hover:bg-blue-800 text-white px-5 py-3 rounded-full font-medium transition-colors duration-300">
+                  Customize Order
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-blue-50 py-20 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-4xl font-bold text-blue-800 mb-6">
+              Cake & Cupcake Fillings
+            </h2>
+
+            <p className="text-gray-700 text-lg leading-relaxed mb-6">
+              Cakes and cupcakes can be customized with your favorite fillings and frosting combinations.
+            </p>
+
+            <div className="grid grid-cols-2 gap-4">
+              {fillings.map((filling, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-2xl px-4 py-4 shadow border border-blue-100 text-center font-medium text-blue-700"
+                >
+                  {filling}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1200&auto=format&fit=crop"
+              alt="Dessert display"
+              className="rounded-3xl shadow-2xl w-full h-[500px] object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-5xl font-bold text-blue-800 mb-6">
+            Custom Orders Available
+          </h2>
+
+          <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto mb-10">
+            All desserts can be customized to fit your theme, colors, event style, and flavor preferences. Dessert tables and large event orders are also available.
+          </p>
+
+          <div className="grid sm:grid-cols-3 gap-6 text-left">
+            <div className="bg-blue-50 p-6 rounded-3xl shadow-md">
+              <h3 className="text-2xl font-bold text-blue-700 mb-3">Birthdays</h3>
+              <p className="text-gray-600">
+                Personalized cakes, cupcakes, and treats for all ages.
+              </p>
+            </div>
+
+            <div className="bg-blue-50 p-6 rounded-3xl shadow-md">
+              <h3 className="text-2xl font-bold text-blue-700 mb-3">Weddings</h3>
+              <p className="text-gray-600">
+                Elegant dessert tables and custom sweets for your special day.
+              </p>
+            </div>
+
+            <div className="bg-blue-50 p-6 rounded-3xl shadow-md">
+              <h3 className="text-2xl font-bold text-blue-700 mb-3">Special Events</h3>
+              <p className="text-gray-600">
+                Baby showers, graduations, holidays, and themed celebrations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="order" className="bg-gradient-to-r from-blue-900 to-sky-600 text-white py-20 px-6 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-5xl font-bold mb-5">
+            Place Your Order
+          </h2>
+
+          <p className="text-xl text-blue-100 leading-relaxed mb-10">
+            Ready to order custom desserts for your next event? Click below to submit your order request.
+          </p>
+
+          <a
+            href="https://forms.gle/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-white text-blue-700 px-10 py-5 rounded-full font-bold text-xl shadow-xl hover:scale-105 transition-transform duration-300"
+          >
+            Order Here
+          </a>
+        </div>
+      </section>
+
+      <footer className="bg-slate-900 text-white py-10 text-center">
+        <h3 className="text-3xl font-bold mb-3">Em’s Sweet Treats</h3>
+        <p className="text-slate-300 text-lg">
+          Professional custom desserts made with creativity and care.
+        </p>
+
+        <p className="mt-5 text-sm text-slate-400">
+          Contact us for pricing, event packages, and dessert table inquiries.
+        </p>
+      </footer>
+    </div>
+  )
+}
